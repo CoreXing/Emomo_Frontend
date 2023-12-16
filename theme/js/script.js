@@ -5,6 +5,13 @@
  * GITHUB: https://github.com/themefisher/
  */
 
+function redirectToProfileDetails() {
+  // 導向到指定的網頁
+window.location.href = "dashboard.html";
+}
+
+
+
 (function ($) {
   'use strict';
 
