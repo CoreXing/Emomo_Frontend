@@ -50,12 +50,6 @@
 -------------------------------------------------------------------*/
 /*=== MEDIA QUERY ===*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500");
-
-.dashboard-wrapper.dashboard-user-profile.hover:hover {
-  background-color: #f0f0f0; /* 這裡設定你想要的背景顏色 */
-  cursor: pointer; /* 這會讓滑鼠游標在區塊上時顯示為手型，表示可以點擊 */
-}
-
 body {
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
