@@ -336,32 +336,39 @@
 		</style>
 		  
 		<section class="user-dashboard page-wrapper">
-		<div class="container">
-			<div class="row">
-			<div class="col-md-12">
-				<div class="dashboard-wrapper dashboard-user-profile hover" onclick="redirectToProfileDetails()">
-				<div class="media">
-					<div class="pull-left text-center">
-					<img class="media-object user-img" src="images/avater.jpg" alt="Image">
-					<a href="#x" class="btn btn-transparent mt-20">Change Image</a>
-					</div>
-					<div class="media-body">
-					<ul class="user-profile-list">
-						<li><span>Full Name:</span>Johanna Doe</li>
-						<li><span>Country:</span>USA</li>
-						<li><span>Email:</span>mail@gmail.com</li>
-						<li><span>Phone:</span>+880123123</li>
-						<li><span>Date of Birth:</span>Dec , 22 ,1991</li>
-					</ul>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="dashboard-wrapper dashboard-user-profile hover" onclick="redirectToProfileDetails()">
+							<div class="media">
+								<div class="pull-left text-center">
+									<img class="media-object user-img" src="images/avater.jpg" alt="Image">
+									<a href="#x" class="btn btn-transparent mt-20">Change Image</a>
+								</div>
+								<div class="media-body">
+									<ul class="user-profile-list" id="userProfileList">
+										<li><span>名字:</span><span id="userName"></span></li>
+										<li><span>地址:</span><span id="userAddress"></span></li>
+										<li><span>Email:</span><span id="userEmail"></span></li>
+										<li><span>電話:</span><span id="userPhone"></span></li>
+										<li><span>ID:</span><span id="userID"></span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				</div>
 			</div>
-			</div>
-		</div>
 		</section>
-		  
-				  
+		<script>
+			const userData = JSON.parse(localStorage.getItem('userData'));
+			document.getElementById('userName').textContent = userData.name || '';
+			document.getElementById('userAddress').textContent = userData.address || '';
+			document.getElementById('userEmail').textContent = userData.email || '';
+			document.getElementById('userPhone').textContent = userData.phone || '';
+			document.getElementById('userID').textContent = userData.username || '';	
+		</script>	
+			  
 
 		<div class="dashboard-wrapper dashboard-user-profile">
           <div class="media">
