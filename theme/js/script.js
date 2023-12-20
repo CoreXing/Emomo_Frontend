@@ -10,6 +10,111 @@ function redirectToProfileDetails() {
 window.location.href = "dashboard.html";
 }
 
+(function () { //分頁+搜尋功能
+  var pageSize = 5;
+  var currentPage = 1;
+  var originalOrders;
+
+  window.onload = function () {
+      // 保存原始的訂單數據
+      originalOrders = document.querySelectorAll(".table tbody tr");
+
+      updateTable();
+      updatePagination();
+  };
+
+  function searchOrders() {
+      currentPage = 1;
+      updateTable();
+      updatePagination();
+  }
+
+  function clearSearch() {
+      document.getElementById("searchInput").value = "";
+      updateTable();
+      updatePagination();
+  }
+
+  function updateTable() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("searchInput");
+      filter = input.value.toUpperCase();
+      table = document.querySelector(".table");
+      tr = originalOrders; // 使用保存的原始訂單數據
+
+      var filteredOrders = [];
+      for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  filteredOrders.push(tr[i].cloneNode(true));
+              }
+          }
+      }
+
+      var start = (currentPage - 1) * pageSize;
+      var end = start + pageSize;
+      var tbody = document.getElementById("ordersTableBody");
+      tbody.innerHTML = "";
+      for (i = start; i < end && i < filteredOrders.length; i++) {
+          tbody.appendChild(filteredOrders[i]);
+      }
+  }
+
+  function updatePagination() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("searchInput");
+      filter = input.value.toUpperCase();
+      table = document.querySelector(".table");
+      tr = originalOrders; // 使用保存的原始訂單數據
+
+      var filteredOrders = [];
+      for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  filteredOrders.push(tr[i]);
+              }
+          }
+      }
+
+      var totalPages = Math.ceil(filteredOrders.length / pageSize);
+
+      // 選擇第二個分頁控制元件
+      var pagination = document.getElementById("pagination2");
+      pagination.innerHTML = "";
+      for (var page = 1; page <= totalPages; page++) {
+          var pageLink = document.createElement("a");
+          pageLink.href = "#";
+          pageLink.textContent = page;
+          pageLink.onclick = function () {
+              currentPage = parseInt(this.textContent);
+              updateTable();
+              updatePagination();
+              return false;
+          };
+          if (page === currentPage) {
+              pageLink.classList.add("active");
+          }
+          pagination.appendChild(pageLink);
+      }
+  }
+
+  // 監聽按下 Enter 鍵的事件
+  document.getElementById('searchInput').addEventListener('keyup', function (event) {
+      // keyCode 13 代表 Enter 鍵
+      if (event.keyCode === 13) {
+          searchOrders(); // 執行搜索函式
+      }
+  });
+
+  // 監聽按下搜尋按鈕的事件
+  document.getElementById('searchButton').addEventListener('click', function () {
+    searchOrders(); // 執行搜索函式
+  });
+})();
 
 
 (function ($) {
