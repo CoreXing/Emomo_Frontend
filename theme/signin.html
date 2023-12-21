@@ -52,7 +52,7 @@
             <h1>EMOMO</h1>
           </a>
           <h2 class="text-center">創建新帳號</h2>
-          <form id="registrationForm" class="text-left clearfix" onsubmit="registerUser()">
+          <form id="registrationForm" class="text-left clearfix" action="profile-details.html">
             <div class="form-group">
                 <input type="text" class="form-control" name="name" placeholder="姓名">
             </div>
@@ -72,10 +72,10 @@
                 <input type="password" class="form-control" name="password" placeholder="密碼">
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-main text-center">註　冊</button>
+                <button type="submit" class="btn btn-main text-center mt-20">註　冊</button>
             </div>
           </form>
-          <p class="mt-20">已經有帳號了？<a href="login.html">登入 </a></p>
+          <p class="mt-20">已經有帳號了？<a href="login.html">登入</a></p>
           <p><a href="forget-password.html">忘記密碼</a></p>
         </div>
       </div>
@@ -86,7 +86,7 @@
   function registerUser(event) {
     
     //event.preventDefault(); // 阻止表單提交的默認行為
-
+    window.location.href = 'profile-details.html';
     // 獲取用戶輸入的資料
     const name = document.querySelector('#registrationForm input[name="name"]').value;
     const address = document.querySelector('#registrationForm input[name="address"]').value;
@@ -94,7 +94,8 @@
     const email = document.querySelector('#registrationForm input[name="email"]').value;
     const username = document.querySelector('#registrationForm input[name="username"]').value;
     const password = document.querySelector('#registrationForm input[name="password"]').value;
-    //alert('Name: ' + name + '\nAddress: ' + address + '\nPhone: ' + phone + '\nEmail: ' + email + '\nUsername: ' + username + '\nPassword: ' + password);
+    alert();
+    alert('Name: ' + name + '\nAddress: ' + address + '\nPhone: ' + phone + '\nEmail: ' + email + '\nUsername: ' + username + '\nPassword: ' + password);
     // 將用戶資料存儲到localStorage
     const userData = {
         name: name,
