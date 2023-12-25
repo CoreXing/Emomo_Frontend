@@ -95,7 +95,7 @@ body {
 p {
   font-family: "Poppins", sans-serif;
   color: #757575;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -282,7 +282,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   padding: 20px 0 30px;
 }
 .title h2 {
-  font-size: 18px;
+  font-size: 30px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;

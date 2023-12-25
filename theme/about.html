@@ -13,7 +13,7 @@
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>EMOMO | E-commerce template</title>
+  <title>EMOMO | E-commerce</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -49,23 +49,19 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 col-xs-12 col-sm-4">
-				<div class="contact-number">
-					<i class="tf-ion-ios-telephone"></i>
-					<span>0129- 12323-123123</span>
-				</div>
 			</div>
 			<div class="col-md-4 col-xs-12 col-sm-4">
 				<!-- Site Logo -->
 				<div class="logo text-center">
 					<a href="index.html">
 						<!-- replace logo here -->
-						<svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
+						<svg width="135px" height="29px" viewBox="0 0 165 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
 							xmlns:xlink="http://www.w3.org/1999/xlink">
 							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40"
 								font-family="AustinBold, Austin" font-weight="bold">
 								<g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
 									<text id="AVIATO">
-										<tspan x="108.94" y="325">AVIATO</tspan>
+										<tspan x="108.94" y="325">EMOMO</tspan>
 									</text>
 								</g>
 							</g>
@@ -134,16 +130,6 @@
 						</ul>
 					</li><!-- / Search -->
 
-					<!-- Languages -->
-					<li class="commonSelect">
-						<select class="form-control">
-							<option>EN</option>
-							<option>DE</option>
-							<option>FR</option>
-							<option>ES</option>
-						</select>
-					</li><!-- / Languages -->
-
 				</ul><!-- / .nav .navbar-nav .navbar-right -->
 			</div>
 		</div>
@@ -171,132 +157,43 @@
 			<div id="navbar" class="navbar-collapse collapse text-center">
 				<ul class="nav navbar-nav">
 
+					<!-- 首頁 -->
+					<li class="dropdown ">
+						<a href="shop-sidebar.html"> 首頁 </a>
+					</li><!-- / 首頁 -->
+
+
+					<!-- 購物 -->
+					<li class="dropdown dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+							role="button" aria-haspopup="true" aria-expanded="false"> 購物 <span
+								class="tf-ion-ios-arrow-down"></span></a>
+						<div class="dropdown-menu">
+							<ul>
+								<li><a href="cart.html">購物車</a></li>
+								<li><a href="order.html">我的訂單</a></li>
+							</ul>
+						</div><!-- / .dropdown-menu -->
+					</li><!-- / 購物 -->
+
+
+					<!-- 會員中心 -->
+					<li class="dropdown dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+							role="button" aria-haspopup="true" aria-expanded="false">會員中心<span
+								class="tf-ion-ios-arrow-down"></span></a>
+						<div class="dropdown-menu">
+							<ul>
+								<li><a href="dashboard.html">會員資料</a></li>
+								<li><a href="contact.html">聯繫客服</a></li>
+							</ul>
+						</div><!-- / .dropdown-menu -->
+					</li><!-- / 會員中心 -->
+
 					<!-- Home -->
 					<li class="dropdown ">
-						<a href="index.html">Home</a>
+						<a href="about.html"> 關於我們 </a>
 					</li><!-- / Home -->
-
-
-					<!-- Elements -->
-					<li class="dropdown dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
-							role="button" aria-haspopup="true" aria-expanded="false">Shop <span
-								class="tf-ion-ios-arrow-down"></span></a>
-						<div class="dropdown-menu">
-							<div class="row">
-
-								<!-- Basic -->
-								<div class="col-lg-6 col-md-6 mb-sm-3">
-									<ul>
-										<li class="dropdown-header">Pages</li>
-										<li role="separator" class="divider"></li>
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="cart.html">Cart</a></li>
-										<li><a href="pricing.html">Pricing</a></li>
-										<li><a href="confirmation.html">Confirmation</a></li>
-
-									</ul>
-								</div>
-
-								<!-- Layout -->
-								<div class="col-lg-6 col-md-6 mb-sm-3">
-									<ul>
-										<li class="dropdown-header">Layout</li>
-										<li role="separator" class="divider"></li>
-										<li><a href="product-single.html">Product Details</a></li>
-										<li><a href="shop-sidebar.html">Shop With Sidebar</a></li>
-
-									</ul>
-								</div>
-
-							</div><!-- / .row -->
-						</div><!-- / .dropdown-menu -->
-					</li><!-- / Elements -->
-
-
-					<!-- Pages -->
-					<li class="dropdown full-width dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
-							role="button" aria-haspopup="true" aria-expanded="false">Pages <span
-								class="tf-ion-ios-arrow-down"></span></a>
-						<div class="dropdown-menu">
-							<div class="row">
-
-								<!-- Introduction -->
-								<div class="col-sm-3 col-xs-12">
-									<ul>
-										<li class="dropdown-header">Introduction</li>
-										<li role="separator" class="divider"></li>
-										<li><a href="contact.html">Contact Us</a></li>
-										<li><a href="about.html">About Us</a></li>
-										<li><a href="404.html">404 Page</a></li>
-										<li><a href="coming-soon.html">Coming Soon</a></li>
-										<li><a href="faq.html">FAQ</a></li>
-									</ul>
-								</div>
-
-								<!-- Contact -->
-								<div class="col-sm-3 col-xs-12">
-									<ul>
-										<li class="dropdown-header">Dashboard</li>
-										<li role="separator" class="divider"></li>
-										<li><a href="dashboard.html">User Interface</a></li>
-										<li><a href="order.html">Orders</a></li>
-										<li><a href="address.html">Address</a></li>
-										<li><a href="profile-details.html">Profile Details</a></li>
-									</ul>
-								</div>
-
-								<!-- Utility -->
-								<div class="col-sm-3 col-xs-12">
-									<ul>
-										<li class="dropdown-header">Utility</li>
-										<li role="separator" class="divider"></li>
-										<li><a href="login.html">Login Page</a></li>
-										<li><a href="signin.html">Signin Page</a></li>
-										<li><a href="forget-password.html">Forget Password</a></li>
-									</ul>
-								</div>
-
-								<!-- Mega Menu -->
-								<div class="col-sm-3 col-xs-12">
-									<a href="shop.html">
-										<img class="img-responsive" src="images/shop/header-img.jpg" alt="menu image" />
-									</a>
-								</div>
-							</div><!-- / .row -->
-						</div><!-- / .dropdown-menu -->
-					</li><!-- / Pages -->
-
-
-
-					<!-- Blog -->
-					<li class="dropdown dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
-							role="button" aria-haspopup="true" aria-expanded="false">Blog <span
-								class="tf-ion-ios-arrow-down"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-							<li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-							<li><a href="blog-full-width.html">Blog Full Width</a></li>
-							<li><a href="blog-grid.html">Blog 2 Columns</a></li>
-							<li><a href="blog-single.html">Blog Single</a></li>
-						</ul>
-					</li><!-- / Blog -->
-
-					<!-- Shop -->
-					<li class="dropdown dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
-							role="button" aria-haspopup="true" aria-expanded="false">Elements <span
-								class="tf-ion-ios-arrow-down"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="typography.html">Typography</a></li>
-							<li><a href="buttons.html">Buttons</a></li>
-							<li><a href="alerts.html">Alerts</a></li>
-						</ul>
-					</li><!-- / Blog -->
-				</ul><!-- / .nav .navbar-nav -->
 
 			</div>
 			<!--/.navbar-collapse -->
@@ -309,10 +206,10 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="content">
-					<h1 class="page-name">About Us</h1>
+					<h1 class="page-name">關於我們</h1>
 					<ol class="breadcrumb">
-						<li><a href="index.html">Home</a></li>
-						<li class="active">about us</li>
+						<li><a href="shop-sidebar.html">首頁</a></li>
+						<li class="active">關於我們</li>
 					</ol>
 				</div>
 			</div>
@@ -327,25 +224,10 @@
 				<img class="img-responsive" src="images/about/about.jpg">
 			</div>
 			<div class="col-md-6">
-				<h2 class="mt-40">About Our Shop</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius enim, accusantium repellat ex autem numquam iure officiis facere vitae itaque.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam qui vel cupiditate exercitationem, ea fuga est velit nulla culpa modi quis iste tempora non, suscipit repellendus labore voluptatem dicta amet?</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam qui vel cupiditate exercitationem, ea fuga est velit nulla culpa modi quis iste tempora non, suscipit repellendus labore voluptatem dicta amet?</p>
-				<a href="contact.html" class="btn btn-main mt-20">Download Company Profile</a>
-			</div>
-		</div>
-		<div class="row mt-40">
-			<div class="col-md-3 text-center">
-				<img src="images/about/awards-logo.png">
-			</div>
-			<div class="col-md-3 text-center">
-				<img src="images/about/awards-logo.png">
-			</div>
-			<div class="col-md-3 text-center">
-				<img src="images/about/awards-logo.png">
-			</div>
-			<div class="col-md-3 text-center">
-				<img src="images/about/awards-logo.png">
+				<h2 class="mt-40">關於這個網站</h2>
+				<p>臺北科技大學 112 學年度上學期，資訊工程學系必修資料庫系統讓我們做一個電子商務網站。</p>
+				<p>EMOMO 將為顧客提供便捷的購物體驗和多樣的商品選擇，商品內容類似於家樂福及大潤發這類的大賣場。我們的網購平台融合了傳統零售和現代電子商務的優勢，讓民眾可以待在家裡使用我們的網購平台買齊所有生活所需的商品。</p>
+				<p>EMOMO 也具備購物車功能，用戶可以將所需商品添加到購物車，等所有商品皆選擇完畢且丟入購物車之後，再由購物車的頁面點選結帳，即可一次購買所有您選擇的商品。當然我們也會使買家和賣家之間能夠即時訊息通信，以便處理訂單狀態、查詢產品信息和解決問題。</p>
 			</div>
 		</div>
 	</div>
@@ -353,42 +235,62 @@
 <section class="team-members ">
 	<div class="container">
 		<div class="row">
-			<div class="title"><h2>Team Members</h2></div>
+			<div class="title"><h2>團隊成員</h2></div>
 		</div>
 		<div class="row">
-			<div class="col-md-3">
-				<div class="team-member text-center">
-					<img class="img-circle" src="images/team/team-1.jpg">
-					<h4>Jonathon Andrew</h4>
-					<p>Founder</p>
-				</div>
-			</div>
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<div class="team-member text-center">
 					<img class="img-circle" src="images/team/team-2.jpg">
-					<h4>Adipisci Velit</h4>
-					<p>Developer</p>
+					<h4>林星主</h4>
+					<p>組長</p>
+					<p>前端開發</p>
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<div class="team-member text-center">
 					<img class="img-circle" src="images/team/team-3.jpg">
-					<h4>John Fexit</h4>
-					<p>Shop Manager</p>
+					<h4>歐陽瑞</h4>
+					<p>組員</p>
+					<p>前端開發</p>
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-4">
+				<div class="team-member text-center">
+					<img class="img-circle" src="images/team/team-3.jpg">
+					<h4>陳昱軒</h4>
+					<p>組員</p>
+					<p>前端開發</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="team-member text-center">
+					<img class="img-circle" src="images/team/team-2.jpg">
+					<h4>劉承軒</h4>
+					<p>組員</p>
+					<p>後端開發</p>
+				</div>
+			</div>
+			<div class="col-md-4">
 				<div class="team-member text-center">
 					<img class="img-circle" src="images/team/team-1.jpg">
-					<h4>John Fexit</h4>
-					<p>Shop Manager</p>
+					<h4>陳思群</h4>
+					<p>組員</p>
+					<p>後端開發</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="team-member text-center">
+					<img class="img-circle" src="images/team/team-1.jpg">
+					<h4>許宸瑋</h4>
+					<p>組員</p>
+					<p>後端開發</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-
+<!--
 <div class="section video-testimonial bg-1 overly-white text-center mt-50">
 	<div class="container">
 		<div class="row">
@@ -401,7 +303,7 @@
 		</div>
 	</div>
 </div>
-
+-->
 
 
 <footer class="footer section text-center">
@@ -410,41 +312,22 @@
 			<div class="col-md-12">
 				<ul class="social-media">
 					<li>
-						<a href="https://www.facebook.com/themefisher">
-							<i class="tf-ion-social-facebook"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.instagram.com/themefisher">
-							<i class="tf-ion-social-instagram"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.twitter.com/themefisher">
-							<i class="tf-ion-social-twitter"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.pinterest.com/themefisher/">
-							<i class="tf-ion-social-pinterest"></i>
+						<a href="https://github.com/CoreXing/Emomo_Frontend">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+								<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+							  </svg>
 						</a>
 					</li>
 				</ul>
 				<ul class="footer-menu text-uppercase">
 					<li>
-						<a href="contact.html">CONTACT</a>
+						<a href="contact.html">客服</a>
 					</li>
 					<li>
-						<a href="shop.html">SHOP</a>
-					</li>
-					<li>
-						<a href="pricing.html">Pricing</a>
-					</li>
-					<li>
-						<a href="contact.html">PRIVACY POLICY</a>
+						<a href="shop-sidebar.html">購物</a>
 					</li>
 				</ul>
-				<p class="copyright-text">Copyright &copy;2021, Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a></p>
+				<p class="copyright-text">Copyright &copy;2023, Designed &amp; Developed by NTUT_CSIE_DS_10</p>
 			</div>
 		</div>
 	</div>
