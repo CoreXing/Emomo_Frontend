@@ -2358,6 +2358,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 }
 .footer .copyright-text {
   margin-top: 20px;
+  font-size: 14px;
 }
 
 .copyright-text a {
