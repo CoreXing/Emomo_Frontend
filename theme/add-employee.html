@@ -23,8 +23,6 @@
   <meta name="author" content="Themefisher">
   <meta name="generator" content="Themefisher Constra HTML Template v1.0">
   
-  <script src="js/script.js"></script>
-
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
   
@@ -32,7 +30,6 @@
   <link rel="stylesheet" href="plugins/themefisher-font/style.css">
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-  
   
   <!-- Animate css -->
   <link rel="stylesheet" href="plugins/animate/animate.css">
@@ -43,9 +40,59 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
+  <!-- 在<head>標籤中添加以下CSS -->
+<style>
+    /* 新增商品表單樣式 */
+    .add-product {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+    }
+
+    .add-product form {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .add-product label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .add-product input,
+    .add-product textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+    }
+
+    /* 固定描述框的高度並禁止縮放 */
+    .add-product textarea {
+        height: 100px; /* 調整高度 */
+        resize: none; /* 禁止縮放 */
+    }
+
+    .add-product button {
+        background-color: #28a745;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .add-product button:hover {
+        background-color: #218838;
+    }
+</style>
+
 </head>
 
 <body id="body">
+    
 <!-- Start Top Header Bar -->
 <section class="top-header">
 	<div class="container">
@@ -152,9 +199,7 @@
 	</div>
 </section><!-- End Top Header Bar -->
 
-
-<!-- Main Menu Section -->
-<section class="menu">
+<section class="menu">ㄧ
 	<nav class="navbar navigation">
 		<div class="container">
 			<div class="navbar-header">
@@ -238,6 +283,18 @@
 									</ul>
 								</div>
 
+								<!-- Contact -->
+								<div class="col-sm-3 col-xs-12">
+									<ul>
+										<li class="dropdown-header">Dashboard</li>
+										<li role="separator" class="divider"></li>
+										<li><a href="dashboard.html">User Interface</a></li>
+										<li><a href="order.html">Orders</a></li>
+										<li><a href="address.html">Address</a></li>
+										<li><a href="profile-details.html">Profile Details</a></li>
+									</ul>
+								</div>
+
 								<!-- Utility -->
 								<div class="col-sm-3 col-xs-12">
 									<ul>
@@ -293,6 +350,7 @@
 		</div><!-- / .container -->
 	</nav>
 </section>
+<!-- 上面的是標頭 -->
 
 
 
@@ -306,112 +364,47 @@
 
 
 
-
-
-
-
-
-
-
-
-
-<section class="page-header">
+<!-- Main Menu Section -->
+<section class="add-employee section">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="content">
-                    <h1 class="page-name">員工列表</h1>
-                    <ol class="breadcrumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active">my account</li>
-                    </ol>
+            <div class="col-md-6 col-md-offset-3">
+                <div class="form-wrapper">
+                    <h2 class="section-title">新增員工</h2>
+                    <form id="addEmployeeForm" action="process-add-employee.php" method="post">
+                        <!-- 在這裡添加您的表單字段 -->
+                        <div class="form-group">
+                            <label for="employeeName">員工名稱：</label>
+                            <input type="text" id="employeeName" name="employeeName" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="employeeUsername">員工帳號：</label>
+                            <input type="text" id="employeeUsername" name="employeeUsername" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="employeePassword">員工密碼：</label>
+                            <input type="password" id="employeePassword" name="employeePassword" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="employeeAddress">員工地址：</label>
+                            <textarea id="employeeAddress" name="employeeAddress" class="form-control" required></textarea>
+                        </div>
+
+                        <!-- 根據需要添加更多字段 -->
+
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary">新增員工</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="user-dashboard page-wrapper">
-	<div class="container">
-        <div class="row">
-            <div class="col-md-6"> <!-- 調整為 col-md-6，使搜尋框顯示在左邊 -->
-                <div class="mt-3">
-                    <div class="custom-input-group">
-						<input type="text" class="form-control" placeholder="搜尋員工" id="searchEmployee">
-						<button class="btn btn-outline-primary" type="button" onclick="searchEmployee()">搜尋</button>
-					</div>
-                </div>
-            </div>
-            <div class="col-md-6 text-right mt-3"> <!-- 新增一半的欄位給搜尋框，使新增員工按鈕顯示在右邊 -->
-                <button class="btn btn-primary" onclick="addNewEmployee()">新增員工</button>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">		  
-                <div class="dashboard-wrapper dashboard-user-profile hover">
-                    <div class="media">
-                        <div class="pull-left text-center">
-                            <img class="media-object user-img" src="images/avater.jpg" alt="Image">
-                            <a href="#x" class="btn btn-transparent mt-20">Change Image</a>
-                        </div>
-                        <div class="media-body">
-                            <ul class="user-profile-list" id="userProfileList">
-                                <li><span>名字:</span><span id="userName"></span></li>
-                                <li><span>地址:</span><span id="userAddress"></span></li>
-                                <li><span>Email:</span><span id="userEmail"></span></li>
-                                <li><span>電話:</span><span id="userPhone"></span></li>
-                                <li><span>ID:</span><span id="userID"></span></li>
-                                <li><button class="btn btn-danger" onclick="deleteUserProfile(event)">刪除</button></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script>
-	function searchEmployee() {
-        // 在這裡添加搜尋員工的相應邏輯
-        const searchQuery = document.getElementById('searchEmployee').value;
-        alert('搜尋員工: ' + searchQuery);
-        // 可以在這裡加上執行搜尋的相應邏輯
-    }
-	
-    function addNewEmployee() {
-        window.location.href = "add-employee.html";
-    }
-</script>
-
-<script>
-    const userData = JSON.parse(localStorage.getItem('userData'));
-    document.getElementById('userName').textContent = userData.name || '';
-    document.getElementById('userAddress').textContent = userData.address || '';
-    document.getElementById('userEmail').textContent = userData.email || '';
-    document.getElementById('userPhone').textContent = userData.phone || '';
-    document.getElementById('userID').textContent = userData.username || '';
-
-    function deleteUserProfile(event) {
-        event.preventDefault(); // 阻止默認行為
-
-        const confirmDelete = confirm('確定要刪除此使用者嗎？');
-        if (confirmDelete) {
-            // 在這裡執行刪除使用者的操作
-            // 這裡可以加上將使用者資訊清空的相應邏輯，例如：
-            document.getElementById('userName').textContent = '';
-            document.getElementById('userAddress').textContent = '';
-            document.getElementById('userEmail').textContent = '';
-            document.getElementById('userPhone').textContent = '';
-            document.getElementById('userID').textContent = '';
-
-            alert('User profile deleted');
-            // 如果需要重新導向或執行其他操作，可以在這裡添加相應的邏輯
-        }
-    }
-</script>
 
 
 
@@ -426,13 +419,7 @@
 
 
 
-
-
-
-
-
-
-
+<!-- 下面的是頁尾 -->
 
 <footer class="footer section text-center">
 	<div class="container">
@@ -479,6 +466,7 @@
 		</div>
 	</div>
 </footer>
+
     <!-- 
     Essential Scripts
     =====================================-->

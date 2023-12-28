@@ -52,10 +52,31 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500");
 
 
+.custom-input-group {
+  display: flex;
+  align-items: center; /* 垂直置中 */
+}
+
+.custom-input-group .form-control {
+  flex: 1;
+  margin-right: 5px; /* 調整搜尋框和按鈕之間的間距 */
+  /* border-top-right-radius: 0; */
+  /* border-bottom-right-radius: 0; */
+  
+}
+
+.custom-input-group .btn {
+  background-color: #007bff; /* 藍色背景 */
+  color: #fff; /* 白色文字 */
+  border-color: #007bff; /* 藍色邊框 */
+}
+
+
+
 #pagination2 a { 
   display: inline-block;
   padding: 8px 12px;
-  margin: 0 5px;
+  margin: 0 5px;  
   text-decoration: none;
   color: #333;
   background-color: #eee;
@@ -1390,13 +1411,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   border-bottom-right-radius: 4px;
 }
 
-.bootstrap-touchspin .input-group-btn-vertical i {
-  position: absolute;
-  top: 3px;
-  left: 5px;
-  font-size: 9px;
-  font-weight: normal;
-}
+
 
 /*=================================================================
   Pricing section
