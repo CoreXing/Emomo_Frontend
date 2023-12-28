@@ -13,7 +13,7 @@
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>Aviato | E-commerce template</title>
+  <title>EMOMO | E-commerce</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -22,9 +22,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="author" content="Themefisher">
   <meta name="generator" content="Themefisher Constra HTML Template v1.0">
-  
-  <!-- theme meta -->
-  <meta name="theme-name" content="aviato" />
   
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
@@ -52,23 +49,20 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 col-xs-12 col-sm-4">
-				<div class="contact-number">
-					<i class="tf-ion-ios-telephone"></i>
-					<span>0129- 12323-123123</span>
-				</div>
+				 
 			</div>
 			<div class="col-md-4 col-xs-12 col-sm-4">
 				<!-- Site Logo -->
 				<div class="logo text-center">
 					<a href="index.html">
 						<!-- replace logo here -->
-						<svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
+						<svg width="135px" height="29px" viewBox="0 0 165 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
 							xmlns:xlink="http://www.w3.org/1999/xlink">
 							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40"
 								font-family="AustinBold, Austin" font-weight="bold">
 								<g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
 									<text id="AVIATO">
-										<tspan x="108.94" y="325">AVIATO</tspan>
+										<tspan x="108.94" y="325">EMOMO</tspan>
 									</text>
 								</g>
 							</g>
@@ -77,11 +71,24 @@
 				</div>
 			</div>
 			<div class="col-md-4 col-xs-12 col-sm-4">
-				<!-- Cart -->
 				<ul class="top-menu text-right list-inline">
+					<!-- Search -->
+					<li class="dropdown search dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+							<i class="tf-ion-ios-search-strong"></i>
+							搜尋
+						</a>
+						<ul class="dropdown-menu search-dropdown">
+							<li>
+								<form action="post"><input type="search" class="form-control" placeholder="Search..."></form>
+							</li>
+						</ul>
+					</li><!-- / Search -->
+					
+					<!-- Cart -->
 					<li class="dropdown cart-nav dropdown-slide">
 						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
-								class="tf-ion-android-cart"></i>Cart</a>
+								class="tf-ion-android-cart"></i> 購物車</a>
 						<div class="dropdown-menu cart-dropdown">
 							<!-- Cart Item -->
 							<div class="media">
@@ -125,30 +132,80 @@
 						</div>
 
 					</li><!-- / Cart -->
-
-					<!-- Search -->
+					
 					<li class="dropdown search dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
-								class="tf-ion-ios-search-strong"></i> Search</a>
-						<ul class="dropdown-menu search-dropdown">
-							<li>
-								<form action="post"><input type="search" class="form-control" placeholder="Search..."></form>
-							</li>
-						</ul>
-					</li><!-- / Search -->
-
-					<!-- Languages -->
-					<li class="commonSelect">
-						<select class="form-control">
-							<option>EN</option>
-							<option>DE</option>
-							<option>FR</option>
-							<option>ES</option>
-						</select>
-					</li><!-- / Languages -->
-
+						<a href="login.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+							<i class="tf-ion-android-person"></i>
+							登出
+						</a>
+					</li>
 				</ul><!-- / .nav .navbar-nav .navbar-right -->
 			</div>
 		</div>
 	</div>
-</section><!-- End Top Header Bar -->
+</section>
+<!-- Header -->
+
+<!-- Main Menu Section -->
+<section class="menu">
+	<nav class="navbar navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<h2 class="menu-title">Main Menu</h2>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+			</div><!-- / .navbar-header -->
+
+			<!-- Navbar Links -->
+			<div id="navbar" class="navbar-collapse collapse text-center">
+				<ul class="nav navbar-nav">
+
+					<!-- 首頁 -->
+					<li class="dropdown ">
+						<a href="shop-sidebar.html"> 首頁 </a>
+					</li><!-- / 首頁 -->
+
+
+					<!-- 購物 -->
+					<li class="dropdown dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+							role="button" aria-haspopup="true" aria-expanded="false"> 購物 <span
+								class="tf-ion-ios-arrow-down"></span></a>
+						<div class="dropdown-menu">
+							<ul>
+								<li><a href="cart.html">購物車</a></li>
+								<li><a href="order.html">我的訂單</a></li>
+							</ul>
+						</div><!-- / .dropdown-menu -->
+					</li><!-- / 購物 -->
+
+
+					<!-- 會員中心 -->
+					<li class="dropdown dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+							role="button" aria-haspopup="true" aria-expanded="false">會員中心<span
+								class="tf-ion-ios-arrow-down"></span></a>
+						<div class="dropdown-menu">
+							<ul>
+								<li><a href="dashboard.html">會員資料</a></li>
+								<li><a href="contact.html">聯繫客服</a></li>
+							</ul>
+						</div><!-- / .dropdown-menu -->
+					</li><!-- / 會員中心 -->
+
+					<!-- Home -->
+					<li class="dropdown ">
+						<a href="about.html"> 關於我們 </a>
+					</li><!-- / Home -->
+
+			</div>
+			<!--/.navbar-collapse -->
+		</div><!-- / .container -->
+	</nav>
+</section>
