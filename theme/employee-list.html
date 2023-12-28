@@ -23,6 +23,8 @@
   <meta name="author" content="Themefisher">
   <meta name="generator" content="Themefisher Constra HTML Template v1.0">
   
+  <script src="js/script.js"></script>
+
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
   
@@ -30,6 +32,7 @@
   <link rel="stylesheet" href="plugins/themefisher-font/style.css">
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
   
   <!-- Animate css -->
   <link rel="stylesheet" href="plugins/animate/animate.css">
@@ -40,59 +43,9 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- 在<head>標籤中添加以下CSS -->
-<style>
-    /* 新增商品表單樣式 */
-    .add-product {
-        padding: 60px 0;
-        background-color: #f9f9f9;
-    }
-
-    .add-product form {
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 5px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .add-product label {
-        display: block;
-        margin-bottom: 8px;
-    }
-
-    .add-product input,
-    .add-product textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        border-radius: 3px;
-    }
-
-    /* 固定描述框的高度並禁止縮放 */
-    .add-product textarea {
-        height: 100px; /* 調整高度 */
-        resize: none; /* 禁止縮放 */
-    }
-
-    .add-product button {
-        background-color: #28a745;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-    }
-
-    .add-product button:hover {
-        background-color: #218838;
-    }
-</style>
-
 </head>
 
 <body id="body">
-    
 <!-- Start Top Header Bar -->
 <section class="top-header">
 	<div class="container">
@@ -199,7 +152,9 @@
 	</div>
 </section><!-- End Top Header Bar -->
 
-<section class="menu">ㄧ
+
+<!-- Main Menu Section -->
+<section class="menu">
 	<nav class="navbar navigation">
 		<div class="container">
 			<div class="navbar-header">
@@ -283,18 +238,6 @@
 									</ul>
 								</div>
 
-								<!-- Contact -->
-								<div class="col-sm-3 col-xs-12">
-									<ul>
-										<li class="dropdown-header">Dashboard</li>
-										<li role="separator" class="divider"></li>
-										<li><a href="dashboard.html">User Interface</a></li>
-										<li><a href="order.html">Orders</a></li>
-										<li><a href="address.html">Address</a></li>
-										<li><a href="profile-details.html">Profile Details</a></li>
-									</ul>
-								</div>
-
 								<!-- Utility -->
 								<div class="col-sm-3 col-xs-12">
 									<ul>
@@ -350,7 +293,6 @@
 		</div><!-- / .container -->
 	</nav>
 </section>
-<!-- 上面的是標頭 -->
 
 
 
@@ -364,68 +306,91 @@
 
 
 
-<!-- Main Menu Section -->
-<section class="add-product section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="form-wrapper">
-                    <h2 class="section-title">新增商品</h2>
-                    <form id="addProductForm" action="process-add-product.php" method="post">
-                        <!-- 在這裡添加您的表單字段 -->
-                        <div class="form-group">
-                            <label for="productName">商品名稱：</label>
-                            <input type="text" id="productName" name="productName" class="form-control" required>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="productPrice">商品價格：</label>
-                            <input type="number" id="productPrice" name="productPrice" class="form-control" required>
-                        </div>
 
-                        <div class="form-group">
-                            <label>商品類別：</label>
-                            <select id="productCategory" name="productCategory" class="form-control" required onchange="checkCategory(this)">
-                                <option value="家電類">家電類</option>
-                                <option value="食物類">食物類</option>
-                                <option value="衣物類">衣物類</option>
-                                <option value="其他">其他</option>
-                            </select>
-                        </div>
 
-                        <div id="otherCategoryInput" style="display: none;" class="form-group">
-                            <label for="otherCategory">其他類別：</label>
-                            <input type="text" id="otherCategory" name="otherCategory" class="form-control">
-                        </div>
 
-                        <div class="form-group">
-                            <label for="productDescription">商品描述：</label>
-                            <textarea id="productDescription" name="productDescription" class="form-control" required></textarea>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="productImage">上傳圖片：</label>
-                            <input type="file" id="productImage" name="productImage" accept="image/*">
-                        </div>
 
-                        <!-- 根據需要添加更多字段 -->
 
-                        <div class="form-group text-right">
-                            <button type="submit" class="btn btn-primary">新增商品</button>
-                        </div>
-                    </form>
-                </div>
+
+
+<section class="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content">
+					<h1 class="page-name">員工列表</h1>
+					<ol class="breadcrumb">
+						<li><a href="index.html">Home</a></li>
+						<li class="active">my account</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="user-dashboard page-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">		  
+		<section class="user-dashboard page-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="dashboard-wrapper dashboard-user-profile hover" onclick="redirectToProfileDetails()">
+							<div class="media">
+								<div class="pull-left text-center">
+									<img class="media-object user-img" src="images/avater.jpg" alt="Image">
+									<a href="#x" class="btn btn-transparent mt-20">Change Image</a>
+								</div>
+								<div class="media-body">
+									<ul class="user-profile-list" id="userProfileList">
+										<li><span>名字:</span><span id="userName"></span></li>
+										<li><span>地址:</span><span id="userAddress"></span></li>
+										<li><span>Email:</span><span id="userEmail"></span></li>
+										<li><span>電話:</span><span id="userPhone"></span></li>
+										<li><span>ID:</span><span id="userID"></span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script>
+			const userData = JSON.parse(localStorage.getItem('userData'));
+			document.getElementById('userName').textContent = userData.name || '';
+			document.getElementById('userAddress').textContent = userData.address || '';
+			document.getElementById('userEmail').textContent = userData.email || '';
+			document.getElementById('userPhone').textContent = userData.phone || '';
+			document.getElementById('userID').textContent = userData.username || '';	
+		</script>	
+			  
+
+		<div class="dashboard-wrapper dashboard-user-profile">
+          <div class="media">
+            <div class="pull-left text-center" href="#!">
+              <img class="media-object user-img" src="images/avater.jpg" alt="Image">
+              <a href="#x" class="btn btn-transparent mt-20">Change Image</a>
             </div>
+            <div class="media-body">
+              <ul class="user-profile-list">
+                <li><span>Full Name:</span>Johanna Doe</li>
+                <li><span>Country:</span>USA</li>
+                <li><span>Email:</span>mail@gmail.com</li>
+                <li><span>Phone:</span>+880123123</li>
+                <li><span>Date of Birth:</span>Dec , 22 ,1991</li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<script>
-    function checkCategory(select) {
-        var otherCategoryInput = document.getElementById('otherCategoryInput');
-        otherCategoryInput.style.display = (select.value === '其他') ? 'block' : 'none';
-    }
-</script>
 
 
 
@@ -440,7 +405,12 @@
 
 
 
-<!-- 下面的是頁尾 -->
+
+
+
+
+
+
 
 <footer class="footer section text-center">
 	<div class="container">
@@ -487,7 +457,6 @@
 		</div>
 	</div>
 </footer>
-
     <!-- 
     Essential Scripts
     =====================================-->
