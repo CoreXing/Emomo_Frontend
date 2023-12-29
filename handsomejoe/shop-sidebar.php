@@ -387,7 +387,7 @@
 			        				</p>
 
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="product-single.html" class="btn btn-transparent">View Product Details</a>
+			        				<a href="product-single.html" class="btn btn-transparent"style="font-weight:bold;">商品詳細內容</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -423,7 +423,7 @@
 			        				</p>
 									
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="product-single.html" class="btn btn-transparent">View Product Details</a>
+			        				<a href="product-single.html" class="btn btn-transparent"style="font-weight:bold;">商品詳細內容</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -459,7 +459,7 @@
 			        				</p>
 
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="sony.html" class="btn btn-transparent">View Product Details</a>
+			        				<a href="sony.html" class="btn btn-transparent"style="font-weight:bold;">商品詳細內容</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -495,7 +495,7 @@
 			        				</p>
 			        				
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="panasonic.html" class="btn btn-transparent">View Product Details</a>
+			        				<a href="panasonic.html" class="btn btn-transparent"style="font-weight:bold;">商品詳細內容</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -531,7 +531,7 @@
 			        				</p>
 			        				
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="chimei.html" class="btn btn-transparent">View Product Details</a>
+			        				<a href="chimei.html" class="btn btn-transparent"style="font-weight:bold;">商品詳細內容</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -567,7 +567,7 @@
 			        				</p>
 			        				
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="tatung.html" class="btn btn-transparent">View Product Details</a>
+			        				<a href="tatung.html" class="btn btn-transparent"style="font-weight:bold;">商品詳細內容</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -603,7 +603,7 @@
 			        				</p>
 			        				
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="lays.html" class="btn btn-transparent">View Product Details</a>
+			        				<a href="lays.html" class="btn btn-transparent"style="font-weight:bold;">商品詳細內容</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -639,7 +639,7 @@
 			        				</p>
 			        				
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="koikeya.html" class="btn btn-transparent">View Product Details</a>
+			        				<a href="koikeya.html" class="btn btn-transparent"style="font-weight:bold;">商品詳細內容</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -675,7 +675,7 @@
 			        				</p>
 			        				
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="cadina.html" class="btn btn-transparent">View Product Details</a>
+			        				<a href="cadina.html" class="btn btn-transparent"style="font-weight:bold;">商品詳細內容</a>
 			        			</div>
 			        		</div>
 			        	</div>
