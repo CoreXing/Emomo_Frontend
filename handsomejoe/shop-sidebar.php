@@ -47,84 +47,11 @@
 <body id="body">
 
 
+
 <section class="products section">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
-				<!--
-				<div class="widget">
-				<h4 class="widget-title">Short By</h4>
-				<form method="post" action="#">
-					<select class="form-control">
-						<option>Man</option>
-						<option>Women</option>
-						<option>Accessories</option>
-						<option>Shoes</option>
-					</select>
-				</form>
-				</div>
-				-->
-
-				<div class="widget product-category">
-					<h4 class="widget-title">類別</h4>
-					<div class="panel-group commonAccordion" id="accordion" role="tablist" aria-multiselectable="true">
-					  	<div class="panel panel-default">
-						    <div class="panel-heading" role="tab" id="headingOne">
-						      	<h4 class="panel-title">
-						        	<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						          		智慧型手機
-						        	</a>
-						      	</h4>
-						    </div>
-					    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-							<div class="panel-body">
-								<ul>
-									<li><a href="#!" id="apple-link">APPLE</a></li>
-									<li><a href="#!" id="samsung-link">SAMSUNG</a></li>
-									<li><a href="#!" id="sony-link">SONY</a></li>
-								</ul>
-							</div>
-					    </div>
-					  </div>
-					  <div class="panel panel-default">
-					    <div class="panel-heading" role="tab" id="headingTwo">
-					      <h4 class="panel-title">
-					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-					         	風扇
-					        </a>
-					      </h4>
-					    </div>
-					    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-					    	<div class="panel-body">
-					     		<ul>
-									<li><a href="#!" id="panasonic-link">Panasonic</a></li>
-									<li><a href="#!" id="chimei-link" >ChiMei</a></li>
-									<li><a href="#!" id="tatung-link">Tatung</a></li>
-								</ul>
-					    	</div>
-					    </div>
-					  </div>
-					  <div class="panel panel-default">
-					    <div class="panel-heading" role="tab" id="headingThree">
-					      <h4 class="panel-title">
-					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-					          	零食
-					        </a>
-					      </h4>
-					    </div>
-					    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-					    	<div class="panel-body">
-					      		<ul>
-									<li><a href="#!" id="lays-link">樂事</a></li>
-									<li><a href="#!" id="koikeya-link">湖池屋</a></li>
-									<li><a href="#!" id="cadina-link">卡迪那</a></li>
-								</ul>
-					    	</div>
-					    </div>
-					  </div>
-					</div>
-					
-				</div>
+			<div class="col-md-2">
 			</div>
 			<div class="col-md-9">
 				<div class="row">
@@ -460,7 +387,7 @@
 			        				</p>
 
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="product-single.html" class="btn btn-transparent" style="font-weight:bold;">商品詳細內容</a>
+			        				<a href="product-single.html" class="btn btn-transparent">View Product Details</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -496,7 +423,7 @@
 			        				</p>
 									
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="product-single.html" class="btn btn-transparent" style="font-weight:bold;">商品詳細內容</a>
+			        				<a href="product-single.html" class="btn btn-transparent">View Product Details</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -532,7 +459,7 @@
 			        				</p>
 
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="sony.html" class="btn btn-transparent" style="font-weight:bold;">商品詳細內容</a>
+			        				<a href="sony.html" class="btn btn-transparent">View Product Details</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -568,7 +495,7 @@
 			        				</p>
 			        				
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="panasonic.html" class="btn btn-transparent" style="font-weight:bold;">商品詳細內容</a>
+			        				<a href="panasonic.html" class="btn btn-transparent">View Product Details</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -604,7 +531,7 @@
 			        				</p>
 			        				
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="chimei.html" class="btn btn-transparent" style="font-weight:bold;">商品詳細內容</a>
+			        				<a href="chimei.html" class="btn btn-transparent">View Product Details</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -640,7 +567,7 @@
 			        				</p>
 			        				
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="tatung.html" class="btn btn-transparent" style="font-weight:bold;">商品詳細內容</a>
+			        				<a href="tatung.html" class="btn btn-transparent">View Product Details</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -676,7 +603,7 @@
 			        				</p>
 			        				
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="lays.html" class="btn btn-transparent" style="font-weight:bold;">商品詳細內容</a>
+			        				<a href="lays.html" class="btn btn-transparent">View Product Details</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -712,7 +639,7 @@
 			        				</p>
 			        				
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="koikeya.html" class="btn btn-transparent" style="font-weight:bold;">商品詳細內容</a>
+			        				<a href="koikeya.html" class="btn btn-transparent">View Product Details</a>
 			        			</div>
 			        		</div>
 			        	</div>
@@ -748,7 +675,7 @@
 			        				</p>
 			        				
 									<!-- 下面一行要分不同的product-single.html -->
-			        				<a href="cadina.html" class="btn btn-transparent" style="font-weight:bold;">商品詳細內容</a>
+			        				<a href="cadina.html" class="btn btn-transparent">View Product Details</a>
 			        			</div>
 			        		</div>
 			        	</div>
