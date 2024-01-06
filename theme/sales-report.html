@@ -40,6 +40,9 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script> -->
 </head>
 
 <body id="body">
@@ -309,10 +312,10 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="content">
-					<h1 class="page-name">員工資訊</h1>
+					<h1 class="page-name">統計表</h1>
 					<ol class="breadcrumb">
 						<li><a href="index.html">Home</a></li>
-						<li class="active">我的資訊</li>
+						<li class="active">每月銷售報表</li>
 					</ol>
 				</div>
 			</div>
@@ -321,123 +324,89 @@
 </section>
 
 
-<section class="user-dashboard page-wrapper">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="dashboard-wrapper user-dashboard">
-					<div class="media">
-                        <div class="pull-left user-image " onmouseover="hoverImage(this)" onmouseout="unhoverImage(this)" onclick="showModal()">
-                            <img class="media-object user-img" src="images/avater.jpg" alt="Image">
-                        </div>
-                        <div class="media-body">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="user-info">
-                                        <p class="mb-3"><strong>Name:</strong> Adam Smith</p>
-                                        <p class="mb-3"><strong>Email:</strong> adam.smith@example.com</p>
-                                        <p class="mb-3"><strong>Address:</strong> 123 Main Street, Cityville</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 d-flex flex-column align-items-center justify-content-center" style="margin-top: auto; margin-bottom: 15px;">
-                                    <button class="btn btn-secondary btn-lg" onclick="editUserInfo">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-
-<div class="modal fade" id="changeImageModal" tabindex="-1" role="dialog" aria-labelledby="changeImageModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document" aria-modal="true">
-        <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-                <h3 class="modal-title" id="changeImageModalLabel">Change Image</h3>
-                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- 添加上传照片的表单 -->
-                <form id="uploadForm">
-                    <div class="form-group">
-                        <label for="photoUpload">Upload Photo:</label>
-                        <input type="file" class="form-control" id="photoUpload" accept="image/*">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <!-- 添加保存更改按钮 -->
-                <button type="button" class="btn btn-primary" onclick="changeImage()">Save Changes</button>
-            </div>
-        </div>
-    </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<div class="container">
+    <canvas id="myChart"></canvas>
 </div>
 
 <script>
-     function showModal() {
-        $('#changeImageModal').modal('show');
-    }
+     const ctx = document.getElementById('myChart').getContext('2d');
 
-    function changeImage() {
-        // 在这里添加更改图片的逻辑，可以通过上传照片的表单获取照片文件
-        var photoInput = document.getElementById('photoUpload');
-        var photoFile = photoInput.files[0];
-        console.log('Photo File:', photoFile);
+	// 虛擬的 Excel 數據
+	const excelData = [
+            [1, 'Jan 01, 2024', 3, 192.00, 'Pending'],
+            [2, 'Jan 02, 2024', 1, 163.00, 'Pending'],
+            [3, 'Jan 03, 2024', 4, 137.00, 'Pending'],
+            [4, 'Jan 04, 2024', 3, 89.00, 'Pending'],
+            [5, 'Jan 05, 2024', 2, 93.00, 'Pending'],
+            [6, 'Jan 06, 2024', 9, 126.00, 'Pending'],
+            [7, 'Jan 07, 2024', 4, 153.00, 'Pending'],
+            [8, 'Jan 08, 2024', 10, 156.00, 'Pending'],
+            [9, 'Jan 09, 2024', 6, 159.00, 'Pending'],
+            [10, 'Jan 10, 2024', 1, 162.00, 'Pending'],
+            [11, 'Jan 11, 2024', 8, 138.00, 'Pending'],
+            [12, 'Jan 12, 2024', 3, 83.00, 'Pending'],
+            [13, 'Jan 13, 2024', 5, 173.00, 'Pending'],
+            [14, 'Jan 14, 2024', 1, 69.00, 'Pending'],
+            [15, 'Jan 15, 2024', 7, 73.00, 'Pending'],
+            [16, 'Jan 16, 2024', 5, 153.00, 'Pending'],
+            [17, 'Jan 17, 2024', 2, 188.00, 'Pending'],
+            [18, 'Jan 18, 2024', 10, 114.00, 'Pending'],
+            [19, 'Jan 19, 2024', 4, 191.00, 'Pending'],
+            [20, 'Jan 20, 2024', 4, 193.00, 'Pending'],
+            [21, 'Jan 21, 2024', 5, 167.00, 'Pending'],
+            [22, 'Jan 22, 2024', 6, 140.00, 'Pending'],
+            [23, 'Jan 23, 2024', 9, 174.00, 'Pending'],
+            [24, 'Jan 24, 2024', 3, 97.00, 'Pending'],
+            [25, 'Jan 25, 2024', 1, 92.00, 'Pending'],
+            [26, 'Jan 26, 2024', 10, 93.00, 'Pending'],
+            [27, 'Jan 27, 2024', 1, 178.00, 'Pending'],
+            [28, 'Jan 28, 2024', 4, 165.00, 'Pending'],
+            [29, 'Jan 29, 2024', 1, 183.00, 'Pending'],
+            [30, 'Jan 30, 2024', 10, 57.00, 'Pending'],
+            [31, 'Jan 31, 2024', 8, 181.00, 'Pending'],
+        ];
 
-        // 在这里可以将照片更改保存到服务器或进行其他处理
+	// 將 Excel 數據轉換為 Chart.js 需要的格式
+	const chartData = {
+		labels: [],
+		datasets: [{
+			label: 'Number of Orders',
+			data: [],
+			borderWidth: 1,
+			backgroundColor: 'rgba(75, 192, 192, 0.2)',
+			borderColor: 'rgba(75, 192, 192, 1)',
+		}]
+	};
 
-        // 关闭模态框
-        $('#changeImageModal').modal('hide');
-    }
+	// 開始從第二行（索引1）遍歷 Excel 數據
+	for (let i = 1; i < excelData.length; i++) {
+		const date = new Date(excelData[i][1]); // 將日期字符串轉換為 Date 對象
+		const day = date.getDate(); // 獲取日期中的日
 
-    function hoverImage(element) {
-    // 在悬浮时可以添加其他效果
-        element.style.opacity = '0.8';
-        element.style.cursor = 'pointer';
-    }
+		chartData.labels.push(day); // 添加到 x 軸數據
+		chartData.datasets[0].data.push(1); // 每個訂單計為1，添加到 y 軸數據
+	}
 
-
-    
-    function unhoverImage(element) {
-        // 恢复默认状态
-        element.style.opacity = '1';
-    }
-
-    
-	function updateStatusColor(selectElement) {
-        var selectedOption = selectElement.options[selectElement.selectedIndex];
-        var statusColor = selectedOption.style.color;
-        selectElement.style.backgroundColor = statusColor; // 設置背景色
-        selectElement.style.color = "white"; // 設置文字顏色，這裡統一設為白色
-    }
-
-    
+	// 創建 Chart.js 圖表
+	new Chart(ctx, {
+		type: 'bar',
+		data: chartData,
+		options: {
+			scales: {
+				x: {
+					type: 'linear', // 使用線性 x 軸
+					position: 'bottom',
+				},
+				y: {
+					beginAtZero: true
+				}
+			}
+		}
+	});
+    </script>
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

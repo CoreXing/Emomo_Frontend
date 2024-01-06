@@ -40,6 +40,46 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+
+        .client-feedback {
+            padding: 80px 0;
+        }
+
+        .feedback-table {
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .feedback-table th, .feedback-table td {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .feedback-table thead {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .feedback-item {
+            border-bottom: 1px solid #dee2e6;
+            transition: background-color 0.3s;
+        }
+
+        .feedback-item:hover {
+            background-color: #e9ecef;
+        }
+
+        
+        .feedback-table td:last-child {
+            text-align: left;
+        }
+    </style>
+
+  
 </head>
 
 <body id="body">
@@ -304,15 +344,23 @@
 	</nav>
 </section>
 
+
+
+
+
+
+
+
+
 <section class="page-header">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="content">
-					<h1 class="page-name">員工資訊</h1>
+					<h1 class="page-name">客服中心</h1>
 					<ol class="breadcrumb">
 						<li><a href="index.html">Home</a></li>
-						<li class="active">我的資訊</li>
+						<li class="active">意見表單</li>
 					</ol>
 				</div>
 			</div>
@@ -321,111 +369,45 @@
 </section>
 
 
-<section class="user-dashboard page-wrapper">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="dashboard-wrapper user-dashboard">
-					<div class="media">
-                        <div class="pull-left user-image " onmouseover="hoverImage(this)" onmouseout="unhoverImage(this)" onclick="showModal()">
-                            <img class="media-object user-img" src="images/avater.jpg" alt="Image">
-                        </div>
-                        <div class="media-body">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="user-info">
-                                        <p class="mb-3"><strong>Name:</strong> Adam Smith</p>
-                                        <p class="mb-3"><strong>Email:</strong> adam.smith@example.com</p>
-                                        <p class="mb-3"><strong>Address:</strong> 123 Main Street, Cityville</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 d-flex flex-column align-items-center justify-content-center" style="margin-top: auto; margin-bottom: 15px;">
-                                    <button class="btn btn-secondary btn-lg" onclick="editUserInfo">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
 
 
-<div class="modal fade" id="changeImageModal" tabindex="-1" role="dialog" aria-labelledby="changeImageModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document" aria-modal="true">
-        <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-                <h3 class="modal-title" id="changeImageModalLabel">Change Image</h3>
-                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- 添加上传照片的表单 -->
-                <form id="uploadForm">
-                    <div class="form-group">
-                        <label for="photoUpload">Upload Photo:</label>
-                        <input type="file" class="form-control" id="photoUpload" accept="image/*">
+<section class="client-feedback">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- 表格 -->
+                <div class="dashboard-wrapper user-dashboard">
+                    <div class="table-responsive">
+                        <table class="table feedback-table">
+                            <thead>
+                                <tr>
+                                    <th>名字</th>
+                                    <th>Email</th>
+                                    <th>時間</th>
+                                    <th>描述</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="feedback-item">
+                                    <td>尖下巴帥哥</td>
+                                    <td>john.doe@example.com</td>
+                                    <td>2024-01-05 15:30:00</td>
+                                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit, ligula in faucibus lacinia.</td>
+                                </tr>
+                                <tr class="feedback-item">
+                                    <td>帥氣銳</td>
+                                    <td>jane.smith@example.com</td>
+                                    <td>2024-01-06 14:45:00</td>
+                                    <td>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <!-- 添加保存更改按钮 -->
-                <button type="button" class="btn btn-primary" onclick="changeImage()">Save Changes</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<script>
-     function showModal() {
-        $('#changeImageModal').modal('show');
-    }
-
-    function changeImage() {
-        // 在这里添加更改图片的逻辑，可以通过上传照片的表单获取照片文件
-        var photoInput = document.getElementById('photoUpload');
-        var photoFile = photoInput.files[0];
-        console.log('Photo File:', photoFile);
-
-        // 在这里可以将照片更改保存到服务器或进行其他处理
-
-        // 关闭模态框
-        $('#changeImageModal').modal('hide');
-    }
-
-    function hoverImage(element) {
-    // 在悬浮时可以添加其他效果
-        element.style.opacity = '0.8';
-        element.style.cursor = 'pointer';
-    }
-
-
-    
-    function unhoverImage(element) {
-        // 恢复默认状态
-        element.style.opacity = '1';
-    }
-
-    
-	function updateStatusColor(selectElement) {
-        var selectedOption = selectElement.options[selectElement.selectedIndex];
-        var statusColor = selectedOption.style.color;
-        selectElement.style.backgroundColor = statusColor; // 設置背景色
-        selectElement.style.color = "white"; // 設置文字顏色，這裡統一設為白色
-    }
-
-    
-</script>
-
-
+</section>
 
 
 
