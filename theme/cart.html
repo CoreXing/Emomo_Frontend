@@ -39,7 +39,10 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+  
 
+  
+  
 </head>
 
 <body id="body">
@@ -326,7 +329,8 @@
             <div class="product-list">
               <form method="post">
                 <table class="table">
-                  <thead>
+				  
+				  <thead>
                     <tr>
                       <th class="">Item Name</th>
                       <th class="">Item Price</th>
@@ -370,9 +374,63 @@
                         <a class="product-remove" href="#!">Remove</a>
                       </td>
                     </tr>
+
                   </tbody>
                 </table>
-                <a href="checkout.html" class="btn btn-main pull-right">Checkout</a>
+            		
+				
+				<div class="col text-right">
+						<p>原價：<span class="original-price">100</span></p>
+						<p>新價：<span class="new-price">80</span></p>
+				</div>
+
+				
+				<style>
+					.original-price {
+					  position: relative;
+					}
+				
+					.original-price::after {
+					  content: '';
+					  position: absolute;
+					  top: 50%;
+					  left: 0;
+					  right: 0;
+					  height: 1px;
+					  background-color: black;
+					  transform: translateY(-50%);
+					  z-index: 1;
+					}
+				
+					.original-price::before {
+					  content: '';
+					  position: absolute;
+					  top: 0;
+					  left: 0;
+					  z-index: 2;
+					  background-color: white;
+					  padding: 0 5px;
+					}
+				
+					.new-price {
+					  position: relative;
+					  z-index: 3;
+					}
+				  </style>
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-7">
+							<a href="coupon-list.html" class="btn btn-main pull-right">優惠卷</a>
+						</div>
+						<div class="col-md">
+							<a href="checkout.html" class="btn btn-main ">結帳</a>
+						</div>
+					</div>
+				</div>
+
+				
+				
               </form>
             </div>
           </div>
