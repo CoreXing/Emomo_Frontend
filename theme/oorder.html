@@ -29,7 +29,6 @@
   <!-- Themefisher Icon font -->
   <link rel="stylesheet" href="plugins/themefisher-font/style.css">
   <!-- bootstrap.min css -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
   
   <!-- Animate css -->
@@ -40,17 +39,12 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .user-image {
-    cursor: pointer;
-    }
-    </style>
-  </style>
-  
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</style>
 </head>
 
 <body id="body">
-
 <!-- Start Top Header Bar -->
 <section class="top-header">
 	<div class="container">
@@ -170,7 +164,6 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-					
 				</button>
 
 			</div><!-- / .navbar-header -->
@@ -311,110 +304,147 @@
 		</div><!-- / .container -->
 	</nav>
 </section>
-
 <section class="page-header">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="content">
-					<h1 class="page-name">個人資訊</h1>
+					<h1 class="page-name">Dashboard</h1>
 					<ol class="breadcrumb">
 						<li><a href="index.html">Home</a></li>
-						<li class="active">我的資訊</li>
+						<li class="active">my account</li>
 					</ol>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+<section class="user-dashboard page-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-inline dashboard-menu text-center">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a class="active" href="order.html">Orders</a></li>
+                    <li><a href="address.html">Address</a></li>
+                    <li><a href="profile-details.html">Profile Details</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+				<div class="form-inline">
+					<div class="mb-3">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search by Order ID" id="searchInput">
+							<span class="input-group-addon clickable preview-meta" ><i class="tf-ion-ios-search-strong"></i></span>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+	
 
 
-<!-- <section class="user-dashboard page-wrapper">
-	<div class="container">
+    <div class="container">
 		<div class="row">
 			<div class="col-md-12">
+				<!-- 分頁控制元件 -->
+				<div id="pagination" class="text-center mb-3"></div>
+				
+				<!-- 表格 -->
 				<div class="dashboard-wrapper user-dashboard">
-					<div class="media">
-                        <div class="pull-left user-image" onmouseover="hoverImage(this)" onmouseout="unhoverImage(this)" onclick="showModal()">
-                            <img class="media-object user-img" src="images/avater.jpg" alt="Image">
-                        </div>
-                        <div class="media-body">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="user-info">
-                                        <p>Name: Adam Smith</p>
-                                        <p>Email: adam.smith@example.com</p>
-                                        <p>Address: 123 Main Street, Cityville</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 d-flex flex-column align-items-center justify-content-end" style="margin-top: auto; margin-bottom: 15px;">
-									<button class="btn btn-secondary btn-lg" onclick="showEditForm()">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-											<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-											<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-										</svg>
-									</button>
-								</div>
-                            </div>
-                        </div>
-                    </div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section> -->
-
-<section class="user-dashboard page-wrapper">
-	<div class="container">
-		<div class="border">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="pull-left user-image" onmouseover="hoverImage(this)" onmouseout="unhoverImage(this)" onclick="showModal()">
-						<img class="img-circle" src="images/avater.jpg" alt="Image" >
+					<div class="table-responsive">
+                        <table class="table">
+                            <!-- thead 和 tbody 部分不變，只在 tbody 中顯示當前頁的訂單 -->
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Date</th>
+                                    <th>Items</th>
+                                    <th>Total Price</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersTableBody">
+                                <tr>
+                                    <td>#22222</td>
+                                    <td>Mar 25, 2016</td>
+                                    <td>3</td>
+                                    <td>$150.00</td>
+                                    <td><span id="status1" class="label label-success">Completed</span></td>
+                                    <td>
+                                        <a href="#" class="btn btn-default" onclick="openModalAndChangeStatus('status1')"><i class="fa-solid fa-clipboard-list fa-lg"></i></a>
+                                        <a href="javascript:void(0);" class="btn btn-default" onclick="showOrderDetails(this)">View</a>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#33333</td>
+                                    <td>Mar 25, 2016</td>
+                                    <td>3</td>
+                                    <td>$150.00</td>
+                                    <td><span id="status2" class="label label-danger">Canceled</span></td>
+                                    <td>
+                                        <a href="#" class="btn btn-default" onclick="openModalAndChangeStatus('status2')"><i class="fa-solid fa-clipboard-list fa-lg"></i></a>
+                                        <a href="javascript:void(0);" class="btn btn-default" onclick="showOrderDetails(this)">View</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#451231</td>
+                                    <td>Mar 25, 2016</td>
+                                    <td>2</td>
+                                    <td>$99.00</td>
+                                    <td><span id="status3" class="label label-info">On Hold</span></td>
+                                    <td> 
+                                        <a href="#" class="btn btn-default" onclick="openModalAndChangeStatus('status3')"><i class="fa-solid fa-clipboard-list fa-lg"></i></a>
+                                        <a href="javascript:void(0);" class="btn btn-default" onclick="showOrderDetails(this)">View</a>
+                                    </td>
+                                </tr>
+                                <!-- 更多訂單行... -->
+                            </tbody>
+                        </table>
 					</div>
 				</div>
-				<div class="col-md-6 d-flex align-items-center">
-					<div class="user-info text-center">
-						<p style="font-size: 1.5em; text-align: left;"><strong>Name:</strong> Adam Smith</p>
-						<p style="font-size: 1.5em; text-align: left;">Email: adam.smith@example.com</p>
-						<p style="font-size: 1.5em; text-align: left;">Address: 123 Main Street, Cityville</p>
-					</div>
-				</div>
-				<div class="col-md-3 d-flex flex-column align-items-center justify-content-center" style="margin-top: auto; margin-bottom: 100px;">
-					<button class="btn btn-secondary btn-lg" onclick="showEditForm()">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-							<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-							<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-						</svg>
-					</button>
-				</div>
+				
+				<!-- 第二個分頁控制元件 -->
+				<div id="pagination2" class="text-center mt-3"></div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<div class="modal fade" id="changeImageModal" tabindex="-1" role="dialog" aria-labelledby="changeImageModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document" aria-modal="true">
+
+
+<div id="myModal" class="modal" >
+    <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-                <h3 class="modal-title" id="changeImageModalLabel">Change Image</h3>
-                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+                <h3 class="modal-title" id="exampleModalLabel"><strong>Edit Status</strong></h3>
             </div>
             <div class="modal-body">
-                <!-- 添加上传照片的表单 -->
-                <form id="uploadForm">
-                    <div class="form-group">
-                        <label for="photoUpload">Upload Photo:</label>
-                        <input type="file" class="form-control" id="photoUpload" accept="image/*">
-                    </div>
-                </form>
+                <div class="form-group">
+                    <label for="statusSelect">Select Status:</label>
+                    <select class="form-control" id="statusSelect">
+                        <option value="label-success">Completed</option>
+                        <option value="label-primary">Pending</option>
+                        <option value="label-danger">Canceled</option>
+                        <option value="label-warning">Arrived</option>
+                        <option value="label-info">On Hold</option>
+                    </select>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <!-- 添加保存更改按钮 -->
-                <button type="button" class="btn btn-primary" onclick="changeImage()">Save Changes</button>
+                <button type="button" class="btn btn-primary" onclick="updateStatus()">Update Status</button>
             </div>
         </div>
     </div>
@@ -422,113 +452,122 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 <script>
-	 function showEditForm() {
-        // 創建一個模態框
+
+    function openModalAndChangeStatus(statusId) {
+        // 使用 Bootstrap 的方法显示模态框
+        $('#myModal').modal('show');
+
+        // 存储当前订单状态标签的id
+        currentStatusId = statusId;
+
+        // 获取当前订单状态标签的文字
+        var currentStatusText = document.getElementById(statusId).innerText;
+
+        // 设置下拉菜单选中项为当前状态文字
+        document.getElementById('statusSelect').value = currentStatusText;
+    }
+
+    function closeModal() {
+        // 使用 Bootstrap 的方法关闭模态框
+        $('#myModal').modal('hide');
+    }
+
+    function updateStatus() {
+        // 获取下拉菜单的选中值
+        var selectedStatus = document.getElementById('statusSelect').value;
+
+        // 获取下拉菜单的选中文字
+        var selectedStatusText = document.getElementById('statusSelect').options[document.getElementById('statusSelect').selectedIndex].text;
+
+        // 修改订单状态标签的class和文字
+        document.getElementById(currentStatusId).className = 'label ' + selectedStatus;
+        document.getElementById(currentStatusId).innerText = selectedStatusText;
+
+        // 关闭模态框
+        closeModal();
+    }
+
+
+    function showOrderDetails(button) {
+        // 獲取該行(tr)的資料
+        var $tr = $(button).closest('tr');
+
+        // 獲取該行的 Order ID
+        var orderId = $tr.find('td:eq(0)').text();
+        var orderData = {
+            orderId: orderId,
+            date: $tr.find('td:eq(1)').text(),
+            amount: $tr.find('td:eq(2)').text(),
+            totalPrice: $tr.find('td:eq(3)').text(),
+            // status: $tr.find('td:eq(4) span').text()
+			status : $tr.find('.status-dropdown').val()
+        };
+
+        // 檢查是否已存在相同的模態框，如果存在則刪除
+        $('#orderDetailsModal').remove();
+
+        // 將資料填充至模態框中
         var modalContent = `
-            <div class="modal fade" id="editFormModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal fade" id="orderDetailsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">編輯資訊</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Order Details - ${orderData.orderId}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <!-- 編輯信息的表單元素 -->
-                            <form>
-                                <div class="form-group">
-                                    <label for="newName">新的名字：</label>
-                                    <input type="text" class="form-control" id="newName">
-                                </div>
-                                <div class="form-group">
-                                    <label for="newAddress">新的地址：</label>
-                                    <input type="text" class="form-control" id="newAddress">
-                                </div>
-                                <div class="form-group">
-                                    <label for="newPassword">新的密碼：</label>
-                                    <input type="password" class="form-control" id="newPassword">
-                                </div>
-                                <div class="form-group">
-                                    <label for="confirmPassword">確認密碼：</label>
-                                    <input type="password" class="form-control" id="confirmPassword">
-                                </div>
-                            </form>
+                            <p><strong>Order ID:</strong> ${orderData.orderId}</p>
+                            <p><strong>Date:</strong> ${orderData.date}</p>
+                            <p><strong>Amount:</strong> ${orderData.amount}</p>
+                            <p><strong>Total Price:</strong> ${orderData.totalPrice}</p>
+                            <p><strong>Status:</strong> ${orderData.status}</p>
+							<p><strong>Address:</strong>台北市大安區忠孝東路三段1號</p>
+                            <hr>
+                            <p><strong>Ordered Items:</strong></p>
+                            <ul>
+                                ${renderOrderedItems(orderId)}
+                            </ul>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" onclick="saveChanges()">確定</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
         `;
 
-        // 刪除現有的模態框，以防止多個模態框的問題
-        $('#editFormModal').remove();
-
         // 將模態框的 HTML 添加到頁面中
         $('body').append(modalContent);
 
         // 顯示模態框
-        $('#editFormModal').modal('show');
+        $('#orderDetailsModal').modal('show');
     }
 
-	function saveChanges() {
-        // 在這裡處理表單數據，執行必要的操作
-        // 例如，獲取新名字、新地址、新密碼和確認密碼的值，然後進行相應的處理
-        // 最後，隱藏模態框
-        $('#editFormModal').modal('hide');
+    // 渲染訂單中的商品列表
+    function renderOrderedItems(orderId) {
+        // 在這裡你可以根據 orderId 從後端取得相應的商品列表資訊
+        // 我做個範例而已 這裡可能以後要去爬資料庫的資料
+        var itemsHtml = `
+            <li>Product 1 - 2 x $99.00</li>
+            <li>Product 2 - 1 x $51.00</li>
+            <!-- 更多商品行... -->
+        `;
+        return itemsHtml;
     }
-
-
-
-     function showModal() {
-        $('#changeImageModal').modal('show');
-    }
-
-    function changeImage() {
-        // 在这里添加更改图片的逻辑，可以通过上传照片的表单获取照片文件
-        var photoInput = document.getElementById('photoUpload');
-        var photoFile = photoInput.files[0];
-        console.log('Photo File:', photoFile);
-
-        // 在这里可以将照片更改保存到服务器或进行其他处理
-
-        // 关闭模态框
-        $('#changeImageModal').modal('hide');
-    }
-
-    function hoverImage(element) {
-    // 在悬浮时可以添加其他效果
-    element.style.opacity = '0.8';
-    }
-
-
-    
-    function unhoverImage(element) {
-        // 恢复默认状态
-        element.style.opacity = '1';
-    }
-
- 
-
-
-
-    
-	function updateStatusColor(selectElement) {
-        var selectedOption = selectElement.options[selectElement.selectedIndex];
-        var statusColor = selectedOption.style.color;
-        selectElement.style.backgroundColor = statusColor; // 設置背景色
-        selectElement.style.color = "white"; // 設置文字顏色，這裡統一設為白色
-    }
-
 </script>
-
-
-
-
 
 
 
@@ -600,7 +639,6 @@
 		</div>
 	</div>
 </footer>
-
     <!-- 
     Essential Scripts
     =====================================-->
